@@ -39,134 +39,131 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
   void checkNumber() {
     setState(() {
-      if (maleName.contains("A") ||
-          maleName.contains("K") ||
-          maleName.contains("U")) {
-        number1 = number1 + 1;
+      if (maleName != "") {
+        if (maleName.contains("A") ||
+            maleName.contains("K") ||
+            maleName.contains("U")) {
+          number1 = number1 + 1;
+        }
+        if (maleName.contains("B") ||
+            maleName.contains("S") ||
+            maleName.contains("J")) {
+          number1 = number1 + 2;
+        }
+        if (maleName.contains("C") ||
+            maleName.contains("L") ||
+            maleName.contains("T")) {
+          number1 = number1 + 3;
+        }
+        if (maleName.contains("D") ||
+            maleName.contains("N") ||
+            maleName.contains("X")) {
+          number1 = number1 + 4;
+        }
+        if (maleName.contains("E") ||
+            maleName.contains("M") ||
+            maleName.contains("W")) {
+          number1 = number1 + 5;
+        }
+        if (maleName.contains("F") ||
+            maleName.contains("O") ||
+            maleName.contains("V")) {
+          number1 = number1 + 6;
+        }
+        if (maleName.contains("G") ||
+            maleName.contains("Q") ||
+            maleName.contains("Z")) {
+          number1 = number1 + 7;
+        }
+        if (maleName.contains("H") ||
+            maleName.contains("P") ||
+            maleName.contains("Y")) {
+          number1 = number1 + 8;
+        }
+        if (maleName.contains("I") || maleName.contains("R")) {
+          number1 = number1 + 9;
+        }
       }
-      if (maleName.contains("B") ||
-          maleName.contains("S") ||
-          maleName.contains("J")) {
-        number1 = number1 + 2;
+      if (femaleName != "") {
+        if (femaleName.contains("A") ||
+            femaleName.contains("K") ||
+            femaleName.contains("U")) {
+          number2 = number2 + 1;
+        }
+        if (femaleName.contains("B") ||
+            femaleName.contains("S") ||
+            femaleName.contains("J")) {
+          number2 = number2 + 2;
+        }
+        if (femaleName.contains("C") ||
+            femaleName.contains("L") ||
+            femaleName.contains("T")) {
+          number2 = number2 + 3;
+        }
+        if (femaleName.contains("D") ||
+            femaleName.contains("N") ||
+            femaleName.contains("X")) {
+          number2 = number2 + 4;
+        }
+        if (femaleName.contains("E") ||
+            femaleName.contains("M") ||
+            femaleName.contains("W")) {
+          number2 = number2 + 5;
+        }
+        if (femaleName.contains("F") ||
+            femaleName.contains("O") ||
+            femaleName.contains("V")) {
+          number2 = number2 + 6;
+        }
+        if (femaleName.contains("G") ||
+            femaleName.contains("Q") ||
+            femaleName.contains("Z")) {
+          number2 = number2 + 7;
+        }
+        if (femaleName.contains("H") ||
+            femaleName.contains("P") ||
+            femaleName.contains("Y")) {
+          number2 = number2 + 8;
+        }
+        if (femaleName.contains("I") || femaleName.contains("R")) {
+          number2 = number2 + 9;
+        }
       }
-      if (maleName.contains("C") ||
-          maleName.contains("L") ||
-          maleName.contains("T")) {
-        number1 = number1 + 3;
-      }
-      if (maleName.contains("D") ||
-          maleName.contains("N") ||
-          maleName.contains("X")) {
-        number1 = number1 + 4;
-      }
-      if (maleName.contains("E") ||
-          maleName.contains("M") ||
-          maleName.contains("W")) {
-        number1 = number1 + 5;
-      }
-      if (maleName.contains("F") ||
-          maleName.contains("O") ||
-          maleName.contains("V")) {
-        number1 = number1 + 6;
-      }
-      if (maleName.contains("G") ||
-          maleName.contains("Q") ||
-          maleName.contains("Z")) {
-        number1 = number1 + 7;
-      }
-      if (maleName.contains("H") ||
-          maleName.contains("P") ||
-          maleName.contains("Y")) {
-        number1 = number1 + 8;
-      }
-      if (maleName.contains("I") || maleName.contains("R")) {
-        number1 = number1 + 9;
-      }
-      if (femaleName.contains("A") ||
-          femaleName.contains("K") ||
-          femaleName.contains("U")) {
-        number2 = number2 + 1;
-      }
-      if (femaleName.contains("B") ||
-          femaleName.contains("S") ||
-          femaleName.contains("J")) {
-        number2 = number2 + 2;
-      }
-      if (femaleName.contains("C") ||
-          femaleName.contains("L") ||
-          femaleName.contains("T")) {
-        number2 = number2 + 3;
-      }
-      if (femaleName.contains("D") ||
-          femaleName.contains("N") ||
-          femaleName.contains("X")) {
-        number2 = number2 + 4;
-      }
-      if (femaleName.contains("E") ||
-          femaleName.contains("M") ||
-          femaleName.contains("W")) {
-        number2 = number2 + 5;
-      }
-      if (femaleName.contains("F") ||
-          femaleName.contains("O") ||
-          femaleName.contains("V")) {
-        number2 = number2 + 6;
-      }
-      if (femaleName.contains("G") ||
-          femaleName.contains("Q") ||
-          femaleName.contains("Z")) {
-        number2 = number2 + 7;
-      }
-      if (femaleName.contains("H") ||
-          femaleName.contains("P") ||
-          femaleName.contains("Y")) {
-        number2 = number2 + 8;
-      }
-      if (femaleName.contains("I") || femaleName.contains("R")) {
-        number2 = number2 + 9;
-      }
+
       sum = number1 + number2;
-      if (sum > 10) {
+      if (sum != 0) {
         r1 = sum % 10;
         r2 = sum / 10;
         finalNumber = r1 + r2;
       }
+
       if (finalNumber == 1) {
         finalResult = result[0];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       } else if (finalNumber == 2) {
         finalResult = result[1];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       } else if (finalNumber == 3) {
         finalResult = result[2];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       } else if (finalNumber == 4) {
         finalResult = result[3];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       } else if (finalNumber == 5) {
         finalResult = result[4];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       } else if (finalNumber == 6) {
         finalResult = result[5];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       } else if (finalNumber == 7) {
         finalResult = result[6];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       } else if (finalNumber == 8) {
         finalResult = result[7];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       } else if (finalNumber == 9) {
         finalResult = result[8];
-        number1 = 0;
-        number2 = 0;
+        sum = 0;
       }
     });
   }
@@ -232,7 +229,14 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 ),
               ),
               const Padding(padding: EdgeInsets.all(10)),
-              Text(finalResult.toString()),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  finalResult.toString(),
+                  style: const TextStyle(fontSize: 20),
+                  textAlign: TextAlign.center,
+                ),
+              )
             ],
           ),
         ),
