@@ -145,6 +145,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Colors.teal[300],
           title: const Center(
@@ -158,26 +159,22 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
               Expanded(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints.expand(),
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 30),
-                    child: TextFormField(
-                      controller: maleController,
-                      onChanged: (value) {
-                        setState(() {
-                          maleController.value = TextEditingValue(
-                              text: value.toUpperCase(),
-                              selection: maleController.selection);
-                          maleName = maleController.text;
-                        });
-                      },
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.male),
-                        hintText: "Male Name",
-                        labelText: "Name",
-                        enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(width: 3.0, color: Colors.teal),
-                        ),
+                  child: TextFormField(
+                    controller: maleController,
+                    onChanged: (value) {
+                      setState(() {
+                        maleController.value = TextEditingValue(
+                            text: value.toUpperCase(),
+                            selection: maleController.selection);
+                        maleName = maleController.text;
+                      });
+                    },
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.male),
+                      hintText: "Male Name",
+                      labelText: "Name",
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(width: 3.0, color: Colors.teal),
                       ),
                     ),
                   ),
@@ -186,59 +183,48 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
               Expanded(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints.expand(),
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: TextFormField(
-                      controller: femaleController,
-                      onChanged: (value) {
-                        setState(() {
-                          femaleController.value = TextEditingValue(
-                              text: value.toUpperCase(),
-                              selection: femaleController.selection);
-                          femaleName = femaleController.text;
-                        });
-                      },
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.female),
-                        hintText: "Female Name",
-                        labelText: "Name",
-                        enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.teal, width: 3.0),
-                        ),
+                  child: TextFormField(
+                    controller: femaleController,
+                    onChanged: (value) {
+                      setState(() {
+                        femaleController.value = TextEditingValue(
+                            text: value.toUpperCase(),
+                            selection: femaleController.selection);
+                        femaleName = femaleController.text;
+                      });
+                    },
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.female),
+                      hintText: "Female Name",
+                      labelText: "Name",
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.teal, width: 3.0),
                       ),
                     ),
                   ),
                 ),
               ),
+              ElevatedButton(
+                child: const Text(
+                  "Xem Kết Quả",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                onPressed: checkNum,
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.teal,
+                ),
+              ),
               Expanded(
+                flex: 2,
                 child: ConstrainedBox(
                   constraints: const BoxConstraints.expand(),
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    child: ElevatedButton(
-                      child: const Text(
-                        "Xem Kết Quả",
-                        style: TextStyle(fontSize: 20.0),
-                      ),
-                      onPressed: checkNum,
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.teal,
-                      ),
-                    ),
+                  child: Text(
+                    finalResult,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontSize: 20),
                   ),
                 ),
               ),
-              Expanded(
-                  flex: 3,
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints.expand(),
-                    child: Text(
-                      finalResult,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 20),
-                    ),
-                  ))
             ],
           ),
         ),
